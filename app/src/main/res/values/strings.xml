@@ -12,5 +12,9 @@
     <string name="drawer_item_feed_back">Feed back</string>
     <string name="drawer_setting">Setting</string>
     <string name="feedback_title">I have problem</string>
+    <string name="msg_get_data_error">Get data failed</string>
+    <string name="drawer_rate">Please rate us</string>
+    <string name="drawer_share">share to friends</string>
+    <string name="no_this_app">There is no this app in market</string>
 
 </resources>

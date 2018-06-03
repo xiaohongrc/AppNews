@@ -8,10 +8,11 @@ import android.provider.BaseColumns;
  */
 
 public class DbSettings {
-    public static class FavouriteTable implements BaseColumns {
-        public static String TABLE_NAME = "favourite";
-        public static String PHOTO_URL = "photo_url";
-        public static String FAVOURITE_TIME = "favourite_time";
+    public static class ChannelTable implements BaseColumns {
+        public static String TABLE_NAME = "channels";
+        public static String CHANNEL_NAME = "channel_name";
+        public static String CHANNEL_ID = "channel_id";
+        public static String CHOOSEN_TIME = "choosen_time";
     }
 
 

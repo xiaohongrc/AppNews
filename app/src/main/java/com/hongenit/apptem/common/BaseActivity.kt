@@ -1,7 +1,9 @@
 package com.hongenit.apptem.common
 
 import android.os.Bundle
+import android.os.PersistableBundle
 import android.support.v7.app.AppCompatActivity
+import com.hongenit.apptem.util.LogUtil
 import com.umeng.analytics.MobclickAgent
 
 /**
@@ -9,10 +11,6 @@ import com.umeng.analytics.MobclickAgent
  * BaseActivity
  */
 abstract class BaseActivity : AppCompatActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
-
 
     override fun onResume() {
         super.onResume()
