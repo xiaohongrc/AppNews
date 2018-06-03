@@ -10,11 +10,11 @@ import com.umeng.analytics.MobclickAgent
 object EventUtil {
     fun onEvent(action: String, hashMap: HashMap<String, String?>? = null) {
 //        PicSeeApplication.getFirebaseEventLogger().logEvent(action, bundle)
-        if (hashMap == null) {
-            MobclickAgent.onEvent(MyApplicaiont.getAppContext(), action)
-        } else {
-            MobclickAgent.onEvent(MyApplicaiont.getAppContext(), action, hashMap)
-        }
+//        if (hashMap == null) {
+//            MobclickAgent.onEvent(MyApplicaiont.getAppContext(), action)
+//        } else {
+//            MobclickAgent.onEvent(MyApplicaiont.getAppContext(), action, hashMap)
+//        }
 
     }
 

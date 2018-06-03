@@ -113,12 +113,10 @@ class MainActivity : BaseActivity(), View.OnClickListener {
             }
         })
 
-
         tv_menu_item1.setOnClickListener(this)
         tv_menu_item2.setOnClickListener(this)
         tv_menu_item3.setOnClickListener(this)
         close_menu.setOnClickListener(this)
-
 
     }
 

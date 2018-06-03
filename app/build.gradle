@@ -11,7 +11,7 @@ android {
         minSdkVersion 17
         targetSdkVersion 27
         versionCode 1
-        versionName "1.0_test"
+        versionName "1.001"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
