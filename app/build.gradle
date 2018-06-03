@@ -10,8 +10,8 @@ android {
         applicationId "com.hongenit.apptem"
         minSdkVersion 17
         targetSdkVersion 27
-        versionCode 1
-        versionName "1.001"
+        versionCode 1001
+        versionName "1.0.01"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
