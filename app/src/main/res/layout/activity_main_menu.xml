@@ -88,8 +88,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:drawablePadding="6dp"
-            android:drawableStart="@drawable/ic_favour_16dp"
-            android:text="drawer_item_favourite" />
+            android:drawableStart="@drawable/ic_menu_send"
+            android:text="@string/drawer_rate" />
 
         <View
             android:layout_width="match_parent"
@@ -101,7 +101,6 @@
             style="@style/menu_item"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:drawableLeft="@drawable/menu_feedback"
             android:drawablePadding="8dp"
             android:drawableStart="@drawable/menu_feedback"
             android:text="@string/drawer_item_feed_back" />
@@ -117,9 +116,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:drawableLeft="@drawable/menu_setting"
+            android:visibility="gone"
             android:drawablePadding="6dp"
             android:drawableStart="@drawable/menu_setting"
-            android:text="@string/drawer_setting" />
+            android:text="@string/drawer_share" />
 
         <View
             android:layout_width="match_parent"

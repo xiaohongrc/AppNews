@@ -10,24 +10,23 @@ import android.database.sqlite.SQLiteOpenHelper
  */
 class DatabaseOpenHelper(context: Context) : SQLiteOpenHelper(context, DB_NAME, null, DB_VERSION) {
     companion object {
-        val DB_NAME = "livechat.db"
+        val DB_NAME = "channels.db"
         val DB_VERSION = 1
     }
 
 
     override fun onCreate(db: SQLiteDatabase?) {
         createFavouritesTable(db)
-
     }
 
 
     // 创建喜欢图片的表格
     private fun createFavouritesTable(db: SQLiteDatabase?) {
-
-        val sql = "CREATE TABLE " + DbSettings.FavouriteTable.TABLE_NAME + "(" +
-                DbSettings.FavouriteTable._ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
-                DbSettings.FavouriteTable.PHOTO_URL + " TEXT," +
-                DbSettings.FavouriteTable.FAVOURITE_TIME + " TEXT" +
+        val sql = "CREATE TABLE " + DbSettings.ChannelTable.TABLE_NAME + "(" +
+                DbSettings.ChannelTable._ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
+                DbSettings.ChannelTable.CHANNEL_ID + " TEXT," +
+                DbSettings.ChannelTable.CHANNEL_NAME + " TEXT," +
+                DbSettings.ChannelTable.CHOOSEN_TIME + " TEXT" +
                 ")"
 
         db?.execSQL(sql)

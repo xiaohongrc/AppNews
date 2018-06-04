@@ -8,7 +8,7 @@ import android.util.Log
  */
 object LogUtil {
 
-    private const val willLog = false
+    private const val willLog = true
 
     fun temp(message: String) {
         if (willLog) {

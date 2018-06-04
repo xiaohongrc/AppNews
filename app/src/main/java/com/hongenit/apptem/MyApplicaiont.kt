@@ -22,7 +22,7 @@ class MyApplicaiont : Application() {
 
 
     private fun initUmeng() {
-        UMConfigure.init(this, "5afd8de9f29d9874fa0006de", Constants.UMENG_CHANNEL_NAME, UMConfigure.DEVICE_TYPE_PHONE, "7949ff424302b34a1fb5ffc0d2cec3b9")
+        UMConfigure.init(this, "5b141cf0a40fa358fe0001d8", Constants.UMENG_CHANNEL_NAME, UMConfigure.DEVICE_TYPE_PHONE, "7949ff424302b34a1fb5ffc0d2cec3b9")
         MobclickAgent.setScenarioType(this, MobclickAgent.EScenarioType.E_UM_NORMAL)
         UMConfigure.setLogEnabled(true)
     }

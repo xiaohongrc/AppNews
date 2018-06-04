@@ -2,12 +2,15 @@ package com.hongenit.apptem
 
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.net.Uri
 import android.os.Bundle
 import android.support.v4.widget.DrawerLayout
 import android.view.View
+import android.widget.Toast
 import com.google.android.gms.ads.AdListener
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.MobileAds
+import com.hongenit.apptem.channelchoose.ChannelChooseActivity
 import com.hongenit.apptem.common.BaseActivity
 import com.hongenit.apptem.common.Constants
 import com.hongenit.apptem.setting.SettingActivity
@@ -21,6 +24,7 @@ class MainActivity : BaseActivity(), View.OnClickListener {
     override fun onClick(v: View?) {
         when (v) {
             tv_menu_item1 -> {
+                marketComment()
             }
 
             tv_menu_item2 -> {
@@ -57,37 +61,6 @@ class MainActivity : BaseActivity(), View.OnClickListener {
         setContentView(R.layout.activity_main)
         initView()
         initAdMob()
-        loadAdView()
-    }
-
-    private fun loadAdView() {
-        val adRequest = AdRequest.Builder().build()
-        adView.loadAd(adRequest)
-        adView.adListener = object : AdListener() {
-            override fun onAdLoaded() {
-                println("onAdLoaded")
-
-                super.onAdLoaded()
-            }
-
-            override fun onAdClosed() {
-                println("onAdClosed")
-
-                super.onAdClosed()
-            }
-
-            override fun onAdClicked() {
-                println("onAdClicked")
-
-                super.onAdClicked()
-            }
-
-            override fun onAdFailedToLoad(p0: Int) {
-                println("onAdFailedToLoad code = " + p0)
-                super.onAdFailedToLoad(p0)
-            }
-
-        }
     }
 
 
@@ -140,14 +113,35 @@ class MainActivity : BaseActivity(), View.OnClickListener {
             }
         })
 
-
         tv_menu_item1.setOnClickListener(this)
         tv_menu_item2.setOnClickListener(this)
         tv_menu_item3.setOnClickListener(this)
         close_menu.setOnClickListener(this)
 
-
     }
 
+
+    // 分享
+    private fun share() {
+        val intent = Intent(Intent.ACTION_SEND)
+        intent.type = "image/*"
+        intent.putExtra(Intent.EXTRA_SUBJECT, "粤语自己学")
+        intent.putExtra(Intent.EXTRA_TEXT, "推荐一个练习粤语和英语的应用（粤语自己学），下载请到应用商店或戳此链接：http://a.app.qq.com/o/simple.jsp?pkgname=hong.cantonese")
+        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK
+        startActivity(Intent.createChooser(intent, title))
+    }
+
+    // 调起应用市场评论
+    private fun marketComment() {
+        try {
+            val uri = Uri.parse("market://details?id=" + packageName)
+            val intent = Intent(Intent.ACTION_VIEW, uri)
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+            startActivity(intent)
+        } catch (e: Exception) {
+            Toast.makeText(this, getString(R.string.no_this_app), Toast.LENGTH_SHORT).show()
+        }
+
+    }
 
 }
