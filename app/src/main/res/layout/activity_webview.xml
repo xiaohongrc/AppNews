@@ -14,7 +14,7 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/title_height"
-        android:background="@color/white"
+        android:background="#EEEEEE"
         android:paddingStart="@dimen/item_news_padding">
 
         <ImageButton
@@ -23,7 +23,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:background="@color/translucent"
-            android:src="@drawable/ic_close_drawer" />
+            android:src="@drawable/ic_title_back" />
 
     </FrameLayout>
 
@@ -34,6 +34,6 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal|bottom"
         ads:adSize="BANNER"
-        ads:adUnitId="ca-app-pub-1616641096587052/7393690000" />
+        ads:adUnitId="ca-app-pub-1616641096587052/1574908577" />
 
 </FrameLayout>

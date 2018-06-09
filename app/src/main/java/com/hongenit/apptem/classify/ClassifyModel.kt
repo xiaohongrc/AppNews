@@ -1,10 +1,12 @@
 package com.hongenit.apptem.classify
 
 import com.hongenit.apptem.MyApplicaiont
+import com.hongenit.apptem.R
 import com.hongenit.apptem.db.ISqliteDB
 import com.hongenit.apptem.db.SqliteDBImpl
 import com.hongenit.apptem.net.WebServiceImpl
 import com.hongenit.apptem.util.LogUtil
+import com.hongenit.apptem.util.ToastUtil
 
 /**
  * Created by hongenit on 2018/6/2.
@@ -53,6 +55,7 @@ class ClassifyModel(classifyPresenter: ClassifyPresenter) {
 
                 override fun onAnalyzeError() {
                     LogUtil.e("ClassifyModel", "get classify data error")
+                    ToastUtil.showToast(R.string.msg_get_data_error)
                 }
             })
 

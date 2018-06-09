@@ -12,5 +12,9 @@ object ToastUtil {
         Toast.makeText(MyApplicaiont.getAppContext(), msg, Toast.LENGTH_SHORT).show()
     }
 
+    fun showToast(resId: Int) {
+        Toast.makeText(MyApplicaiont.getAppContext(), MyApplicaiont.getAppContext()?.getString(resId), Toast.LENGTH_SHORT).show()
+    }
+
 
 }

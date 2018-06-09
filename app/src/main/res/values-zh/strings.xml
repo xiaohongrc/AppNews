@@ -16,5 +16,7 @@
     <string name="drawer_rate">吐槽开发者</string>
     <string name="drawer_share">分享给好友</string>
     <string name="no_this_app">手机没有安装应用市场！</string>
+    <string name="str_exit_touch_commit">再次点击返回键退出!</string>
+
 
 </resources>

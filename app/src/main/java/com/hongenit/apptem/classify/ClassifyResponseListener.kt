@@ -45,8 +45,12 @@ open abstract class ClassifyResponseListener : ResponseListener() {
      */
     private fun AnalyzeResposeData(responseString: String?): ArrayList<ClassifyTypeBean> {
         val resultList = ArrayList<ClassifyTypeBean>()
-
-        val jsonObject = JSONObject(responseString)
+        var jsonObject: JSONObject? = null
+        try {
+            jsonObject = JSONObject(responseString)
+        } catch (e: Exception) {
+            return resultList
+        }
         val showapi_res_code = jsonObject.getInt("showapi_res_code")
         if (showapi_res_code != 0) {
             onError()

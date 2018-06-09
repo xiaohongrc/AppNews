@@ -118,9 +118,11 @@ class NewsFragment : BaseFragment() {
             holder.tv_desc.setText(bean.desc)
             holder.tv_source.setText(bean.source)
             val imageurls = bean.imageurls
+            var imgUrl:String? = ""
             if (imageurls != null && imageurls.size > 0) {
-                ImageLoadUtil.newInstance()?.loadImage(context!!, holder.iv_img, imageurls[0].url)
+               imgUrl =  imageurls[0].url
             }
+            ImageLoadUtil.newInstance()?.loadImage(context!!, holder.iv_img, imgUrl)
 
 //            holder.iv_choose.visibility = if (bean.isChoosed()) View.VISIBLE else View.GONE
         }

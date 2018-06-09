@@ -5,6 +5,7 @@ import com.google.gson.reflect.TypeToken
 import com.hongenit.apptem.MyApplicaiont
 import com.hongenit.apptem.net.ResponseListener
 import com.hongenit.apptem.util.LogUtil
+import org.json.JSONObject
 
 /**
  * Created by Xiaohong on 2018/4/28.
@@ -46,6 +47,19 @@ abstract class CommonTabResponsListener : ResponseListener() {
 //    "thumbnailUrl ": "http://pic1.win4000.com/mobile/2018-04-04/5ac478a441168_250_350.jpg"
 
     private fun AnalyzeResposeData(jsonString: String?): ArrayList<NewsBean.ShowapiResBodyBean.PagebeanBean.ContentlistBean>? {
+
+        var jsonObject: JSONObject? = null
+        try {
+            jsonObject = JSONObject(jsonString)
+        } catch (e: Exception) {
+            return null
+        }
+
+        val showapi_res_code = jsonObject.getInt("showapi_res_code")
+        if (showapi_res_code != 0) {
+            return null
+        }
+
         val gson = Gson()
         val newsData = gson.fromJson<NewsBean>(jsonString, TypeToken.get(NewsBean::class.java).getType())
         val pagebean = newsData.showapi_res_body?.pagebean

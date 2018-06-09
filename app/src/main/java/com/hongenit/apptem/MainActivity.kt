@@ -16,6 +16,7 @@ import com.hongenit.apptem.common.Constants
 import com.hongenit.apptem.setting.SettingActivity
 import com.hongenit.apptem.util.EventUtil
 import com.hongenit.apptem.util.LogUtil
+import com.hongenit.apptem.util.ToastUtil
 import com.hongenit.apptem.util.Utils
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_main_menu.*
@@ -91,7 +92,7 @@ class MainActivity : BaseActivity(), View.OnClickListener {
             override fun onDrawerSlide(drawerView: View, slideOffset: Float) {
                 //设置主布局随菜单滑动而滑动
                 val drawerViewWidth = drawerView.width
-                fl_main_content.setTranslationX(drawerViewWidth!! * slideOffset)
+                fl_main_content.setTranslationX(drawerViewWidth * slideOffset)
 
                 //设置控件最先出现的位置
                 val padingLeft = drawerViewWidth.toDouble() * (1 - 0.618) * (1 - slideOffset).toDouble()
@@ -143,5 +144,26 @@ class MainActivity : BaseActivity(), View.OnClickListener {
         }
 
     }
+
+
+    override fun onBackPressed() {
+        if (exitConfirm()) {
+            super.onBackPressed()
+        }
+
+    }
+
+    private var mExitTime: Long = 0
+
+    private fun exitConfirm(): Boolean {
+        if (System.currentTimeMillis() - mExitTime < 2000) {
+            return true
+        } else {
+            ToastUtil.showToast(getString(R.string.str_exit_touch_commit))
+            mExitTime = System.currentTimeMillis()
+            return false
+        }
+    }
+
 
 }

@@ -16,5 +16,6 @@
     <string name="drawer_rate">Please rate us</string>
     <string name="drawer_share">share to friends</string>
     <string name="no_this_app">There is no this app in market</string>
+    <string name="str_exit_touch_commit">Tap again  to exit</string>
 
 </resources>
